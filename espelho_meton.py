@@ -289,8 +289,7 @@ st.set_page_config(page_title="Busca UAPS", layout="centered")
 st.title("Espelho digital UAPS Meton de Alencar")
 
 # input antes do botão
-endereco = st.text_input("Digite o endereço:",
-                         placeholder="Ex.:rua do imperador 42")
+endereco = st.text_input("Digite o endereço:",placeholder="Ex.:rua do imperador 42")
 
 # botão do contador
 if 'contador_busca' not in st.session_state:
