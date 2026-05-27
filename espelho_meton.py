@@ -261,6 +261,24 @@ dados_ubs = {
             {"rua": "rua pedro melo", "inicio": 703, "fim": 871, "lado": "todos"}
 
         ]
+    },
+    "micro_01_equipe_317": {
+        "profissionais": ["Acs - Marcelo", "médica - Alessandra ", "Equipe sem Enfermeira."],
+        "enderecos": [
+            {"rua": "rua audizio pinheiro", "inicio": 360,
+                "fim": 605, "lado": "todos"},
+            {"rua": "rua curitiba", "inicio": 498, "fim": 772, "lado": "todos"},
+            {"rua": "rua curitiba", "inicio": 501, "fim": 711, "lado": "todos"},
+            {"rua": "rua edgard de arruda", "inicio": 1619,
+                "fim": 1619, "lado": "todos"},
+            {"rua": "rua maceio", "inicio": 566, "fim": 750, "lado": "todos"},
+            {"rua": "rua santa filomena", "inicio": 20, "fim": 306, "lado": "todos"},
+            {"rua": "rua santa filomena", "inicio": 23, "fim": 297, "lado": "todos"},
+            {"rua": "avenida fernandes tavora",
+                "inicio": 1756, "fim": 19503, "lado": "todos"},
+            {"rua": "rua paulo lopes", "inicio": 565, "fim": 619, "lado": "todos"}
+
+        ]
     }
 }
 
@@ -289,7 +307,8 @@ st.set_page_config(page_title="Busca UAPS", layout="centered")
 st.title("Espelho digital UAPS Meton de Alencar")
 
 # input antes do botão
-endereco = st.text_input("Digite o endereço:",placeholder="Ex.:rua do imperador 42")
+endereco = st.text_input("Digite o endereço:",
+                         placeholder="Ex.:rua do imperador 42")
 
 # botão do contador
 if 'contador_busca' not in st.session_state:
