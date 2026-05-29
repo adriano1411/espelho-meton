@@ -329,4 +329,11 @@ with st.sidebar:
     st.subheader("Login Adm")
     senha = st.text_input("senha", type="password")
 
-if senha 
+    if senha == st.secrets["senha_adm"]:
+         st.session_state.logado = True
+         st.success("Logado como Adm")
+    elif senha:
+         st.error("Senha Incorreta")
+
+if "logado" not in st.session_state:
+    st.session_state.logado = False
