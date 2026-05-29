@@ -338,5 +338,5 @@ with st.sidebar:
     else:
         st.success("Logado como Adm")
         if st.button("sair"):
-            st.session_state.logado = True
+            st.session_state.logado = False
             st.rerun()
