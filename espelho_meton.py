@@ -331,4 +331,4 @@ senha_digitada = st.sidebar.text_input("Adm", type="password")
 
 if senha_digitada == senha_correta:
     st.sidebar.success("logado como Adm")
-    st.sidebar.metric("total de buscas".st.session_state.contador_busca)
+    st.sidebar.metric("total de buscas", st.session_state.contador_busca)
