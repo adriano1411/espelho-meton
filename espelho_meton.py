@@ -330,5 +330,5 @@ senha_correta = "meton2026"
 senha_digitada = st.sidebar.text_input("Adm", type="password")
 
 if senha_digitada == senha_correta:
-    st.sidebar.sucess("logado como Adm")
+    st.sidebar.success("logado como Adm")
     st.sidebar.metric("total de buscas".st.session_state.contador_busca)
