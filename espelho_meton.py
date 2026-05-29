@@ -326,14 +326,17 @@ if 'contador_busca' not in st.session_state:
 
 # área do adm
 with st.sidebar:
-    st.subheader("Login Adm")
-    senha = st.text_input("senha", type="password")
+    if not st.session_state.get("logado",False):
+        st.subheader("Login Adm")
+        senha = st.text_input("senha", type="password" key="senha_input")
 
     if senha == st.secrets["senha_adm"]:
          st.session_state.logado = True
-         st.success("Logado como Adm")
+         st.rerun()
     elif senha:
          st.error("Senha Incorreta")
-
-if "logado" not in st.session_state:
-    st.session_state.logado = False
+    else:
+        st.success("Logado como Adm")
+        if st.button("sair"):
+            st.session_state.logado = True
+            st.rerun()
