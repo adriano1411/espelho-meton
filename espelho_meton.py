@@ -328,7 +328,7 @@ if 'contador_busca' not in st.session_state:
 with st.sidebar:
     if not st.session_state.get("logado",False):
         st.subheader("Login Adm")
-        senha = st.text_input("senha", type="password" key="senha_input")
+        senha = st.text_input("senha",type="password", key="senha_input")
 
     if senha == st.secrets["senha_adm"]:
          st.session_state.logado = True
