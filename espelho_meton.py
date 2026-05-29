@@ -322,9 +322,11 @@ if 'contador_busca' not in st.session_state:
             st.write("equipe:", ",".join(profissionais))
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
-    
+
 
 # área do adm
-senha = st.text_input("senha",type="password")
-if senha == st.secrets["senha_adm"]:
-    st.success("logado como Adm")
+with st.sidebar:
+    st.subheader("Login Adm")
+    senha = st.text_input("senha", type="password")
+
+if senha 
