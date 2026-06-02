@@ -263,13 +263,11 @@ dados_ubs = {
     },
     "micro_01_equipe_317": {
         "profissionais": ["Acs - Marcelo", "médica - Alessandra ", "Equipe sem Enfermeira."],
-        "enderecos": [
-            {"rua": "rua audizio pinheiro", "inicio": 360,
-                "fim": 605, "lado": "todos"},
+        "enderecos": [           
+            {"rua": "rua audizio pinheiro", "inicio": 360,"fim": 605, "lado": "todos"},
             {"rua": "rua curitiba", "inicio": 498, "fim": 772, "lado": "todos"},
             {"rua": "rua curitiba", "inicio": 501, "fim": 711, "lado": "todos"},
-            {"rua": "rua edgard de arruda", "inicio": 1619,
-                "fim": 1619, "lado": "todos"},
+            {"rua": "rua edgard de arruda", "inicio": 1619,"fim": 1619, "lado": "todos"},
             {"rua": "rua maceio", "inicio": 566, "fim": 750, "lado": "todos"},
             {"rua": "rua santa filomena", "inicio": 20, "fim": 306, "lado": "todos"},
             {"rua": "rua santa filomena", "inicio": 23, "fim": 297, "lado": "todos"},
@@ -312,12 +310,13 @@ endereco = st.text_input("Digite o endereço:",
 # botão do contador
 if 'contador_busca' not in st.session_state:
     st.session_state.contador_busca = 0
-    if st.button("buscar"):
-        if endereco:
-            st.session_state.contador_busca += 1
-
+if st.button("buscar"):
+    if endereco:
+        st.session_state.contador_busca += 1
         micro, profissionais = buscar_micro_por_enderecos(endereco)
         if micro:
+            st.write("DEBUG - Micro:" micro)
+            st.write("DEBUG - Profissionais:" profissionais)
             st.success(f"{micro}.")
             st.write("equipe:", ",".join(profissionais))
         else:
@@ -337,6 +336,6 @@ with st.sidebar:
          st.error("Senha Incorreta")
     else:
         st.success("Logado como Adm")
-        if st.button("sair"):
+    if st.button("sair"):
             st.session_state.logado = False
             st.rerun()
