@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 dados_ubs = {
     "micro_08_equipe_316": {
-        "profissionais": ["Acs-Adriano", "médica - Mirian", "sem enfermeira."],
+        "profissionais": ["Acs-Adriano", "médica - Mirian", "Enfermeira de apoio: Ana paula Cavalcante."],
         "enderecos": [
             {"rua": "rua hipolito pamplona", "inicio": 640,
                 "fim": 783, "lado": "todos"},
@@ -276,7 +276,23 @@ dados_ubs = {
             {"rua": "rua paulo lopes", "inicio": 565, "fim": 619, "lado": "todos"}
 
         ]
-    }
+    },
+    "micro_03_equipe_318": {
+        "profissionais": ["Acs - Flor", "Sem médico na equipe ", "Enfermeira de apoio: Rochelle."],
+        "enderecos": [           
+            {"rua": "rua doutor luis moraes correia", "inicio": 3,"fim": 227, "lado": "impar"},
+            {"rua": "rua professor edgard de arruda ","inicio": 1965, "fim": 1998, "lado": "todos"},
+            {"rua": "rua roraima", "inicio": 5, "fim": 69, "lado": "impar"},
+            {"rua": "rua roraima", "inicio": 26,"fim": 62, "lado": "par"},
+            {"rua": "rua paulo lopes", "inicio": 1060, "fim": 1138, "lado": "todos"},
+            {"rua": "rua macapa","inicio": 373, "fim": 869, "lado": "impar"},
+            {"rua": "rua manaus", "inicio": 500, "fim": 1042, "lado": "par"},
+            {"rua": "rua curitiba","inicio": 1049, "fim": 1075, "lado": "impar"},
+            {"rua": "rua curitiba", "inicio": 1052, "fim": 1096, "lado": "par"},
+            {"rua": "avenida senador fernandes tavora ", "inicio": 2342, "fim": 2360, "lado": "par"}
+
+        ]
+    }  
 }
 
 
@@ -316,7 +332,10 @@ if st.button("buscar"):
         micro, profissionais = buscar_micro_por_enderecos(endereco)
         if micro:
             st.success(f"{micro}.")
-            st.write("equipe:",",".join(profissionais))
+            st.write("equipe:",
+            
+            
+            ",".join(profissionais))
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
 
