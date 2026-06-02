@@ -315,10 +315,8 @@ if st.button("buscar"):
         st.session_state.contador_busca += 1
         micro, profissionais = buscar_micro_por_enderecos(endereco)
         if micro:
-            st.write("DEBUG - Micro:", micro)
-            st.write("DEBUG - Profissionais:" ,profissionais)
             st.success(f"{micro}.")
-            st.write("equipe:", ",".join(profissionais))
+            st.write("equipe:",",".join(profissionais))
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
 
