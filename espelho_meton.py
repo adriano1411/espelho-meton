@@ -292,6 +292,18 @@ dados_ubs = {
             {"rua": "avenida senador fernandes tavora ", "inicio": 2342, "fim": 2360, "lado": "par"}
 
         ]
+    },  
+    "micro_03_equipe_319": {
+        "profissionais": ["Acs: Nalva", "médico: Matheus ", "Enfermeira: Angela Belizário."],
+        "enderecos": [           
+            {"rua": "rua itubiara", "inicio": 12,"fim": 112, "lado": "par"},
+            {"rua": "rua cravilandia","inicio": 57, "fim": 179, "lado": "impar"},
+            {"rua": "rua agua verde", "inicio": 41, "fim": 125, "lado": "impar"},
+            {"rua": "rua tarcisio peixoto", "inicio": 329,"fim": 343, "lado": "impar"},
+            {"rua": "rua doutor pedro augusto", "inicio": 32, "fim": 52, "lado": "par"},
+            {"rua": "rua rui monte","inicio": 964, "fim": 1220, "lado": "par"}
+
+        ]
     }  
 }
 
