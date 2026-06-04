@@ -356,7 +356,7 @@ if st.button("buscar"):
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
 
-st.text("Obs.:O espelho contempla todos as micros do Antônio Bezerra e algumas do Dom Lustosa!")
+st.text("O espelho contempla todos as micros do Antônio Bezerra e algumas do Dom Lustosa!")
 
 
 # área do adm
