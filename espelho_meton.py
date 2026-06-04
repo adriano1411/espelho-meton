@@ -325,9 +325,8 @@ def buscar_micro_por_enderecos(endereco_busca):
     return None, None
 
 
+
 # interface streamlit
-
-
 st.set_page_config(page_title="Busca UAPS Meton de Alencar", layout="centered")
 st.title("Espelho digital UAPS Meton de Alencar")
 
@@ -349,6 +348,8 @@ if st.button("buscar"):
             ",".join(profissionais))
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
+
+st.text("Obs.:O espelho cobre tod")            
 
 
 # área do adm
