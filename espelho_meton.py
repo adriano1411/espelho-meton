@@ -1,10 +1,9 @@
-
 import pandas as pd
 import streamlit as st
 import pandas as pd
 dados_ubs = {
     "micro_08_equipe_316": {
-        "profissionais": ["Acs-Adriano", "médica - Mirian", "sem enfermeira."],
+        "profissionais": ["Acs-Adriano", "médica - Mirian", "Enfermeira de apoio: Ana paula Cavalcante."],
         "enderecos": [
             {"rua": "rua hipolito pamplona", "inicio": 640,
                 "fim": 783, "lado": "todos"},
@@ -301,9 +300,7 @@ def buscar_micro_por_enderecos(endereco_busca):
 
 
 # interface streamlit
-
-
-st.set_page_config(page_title="Busca UAPS", layout="centered")
+st.set_page_config(page_title="Busca UAPS Meton de Alencar", layout="centered")
 st.title("Espelho digital UAPS Meton de Alencar")
 
 # input antes do botão
@@ -313,23 +310,35 @@ endereco = st.text_input("Digite o endereço:",
 # botão do contador
 if 'contador_busca' not in st.session_state:
     st.session_state.contador_busca = 0
-    if st.button("buscar"):
-        if endereco:
-            st.session_state.contador_busca += 1
-
+if st.button("buscar"):
+    if endereco:
+        st.session_state.contador_busca += 1
         micro, profissionais = buscar_micro_por_enderecos(endereco)
         if micro:
             st.success(f"{micro}.")
-            st.write("equipe:", ",".join(profissionais))
+            st.write("equipe:",
+
+
+                     ",".join(profissionais))
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
-    else:
-        st.warning("digite o endeço")
+
+st.text("O espelho contempla todos as micros do Antônio Bezerra e algumas do Dom Lustosa!")
+
 
 # área do adm
-senha_correta = "meton2026"
-senha_digitada = st.sidebar.text_input("Adm", type="password")
+with st.sidebar:
+    if not st.session_state.get("logado", False):
+        st.subheader("Login Adm")
+        senha = st.text_input("senha", type="password", key="senha_input")
 
-if senha_digitada == senha_correta:
-    st.sidebar.sucess("logado como Adm")
-    st.sidebar.metric("total de buscas".st.session_state.contador_busca)
+    if senha == st.secrets["senha_adm"]:
+        st.session_state.logado = True
+        st.rerun()
+    elif senha:
+        st.error("Senha Incorreta")
+    else:
+        st.success("Logado como Adm")
+    if st.button("sair"):
+        st.session_state.logado = False
+        st.rerun()
