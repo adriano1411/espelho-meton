@@ -90,7 +90,7 @@ dados_ubs = {
         ]
     },
     "micro_03_equipe_315": {
-        "profissionais": ["Acs-Viviane", "médico - Adryan", "enfª Ana Paula girão."],
+        "profissionais": ["Acs-Viviane", "Sem médico na equipe", "enfª Ana Paula girão."],
         "enderecos": [
             {"rua": "rua salgado filho", "inicio": 272, "fim": 754, "lado": "par"},
             {"rua": "rua major celestino", "inicio": 579,
@@ -110,7 +110,7 @@ dados_ubs = {
         ]
     },
     "micro_01_equipe_315": {
-        "profissionais": ["Acs-Nazaré", "médico - Adryan", "enfª Ana Paula girão."],
+        "profissionais": ["Acs-Nazaré", "Sem médico na equipe", "enfª Ana Paula girão."],
         "enderecos": [
             {"rua": "rua salgado filho", "inicio": 8, "fim": 100, "lado": "par"},
             {"rua": "rua sao vicente de paula",
@@ -125,7 +125,7 @@ dados_ubs = {
         ]
     },
     "micro_06_equipe_315": {
-        "profissionais": ["Acs-Mopse", "médico - Adryan", "enfª Ana Paula girão."],
+        "profissionais": ["Acs-Mopse", "Sem médico na equipe", "enfª Ana Paula girão."],
         "enderecos": [
             {"rua": "avenida mister hull", "inicio": 5988,
                 "fim": 6018, "lado": "par"},
@@ -145,7 +145,7 @@ dados_ubs = {
         ]
     },
     "micro_04_equipe_315": {
-        "profissionais": ["Acs-Irapuan", "médico - Adryan", "enfª Ana Paula girão."],
+        "profissionais": ["Acs-Irapuan", "sem médico na equipe", "enfª Ana Paula girão."],
         "enderecos": [
             {"rua": "rua anario braga", "inicio": 810, "fim": 1009, "lado": "todos"},
             {"rua": "rua tomas rodrigues", "inicio": 6, "fim": 135, "lado": "todos"},
