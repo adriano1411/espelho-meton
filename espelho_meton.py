@@ -36,6 +36,8 @@ dados_ubs = {
                 "inicio": 943, "fim": 1066, "lado": "todos"},
             {"rua": "rua 2 tupinamba da frota",
                 "inicio": 974, "fim": 1072, "lado": "par"},
+            {"rua": "rua 2 tupinamba da frota",
+                "inicio": 982, "fim": 982, "lado": "todos"},    
             {"rua": "rua salvador", "inicio": 30, "fim": 1068, "lado": "impar"},
             {"rua": "rua tenente queiros", "inicio": 1213,
                 "fim": 1213, "lado": "todos"}
