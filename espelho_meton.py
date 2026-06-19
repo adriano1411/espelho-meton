@@ -330,17 +330,17 @@ st.text("O espelho contempla todos as micros do Antônio Bezerra e algumas do Do
 
 # área do adm
 with st.sidebar:
-    if not st.session_state.get("logado", False):
-        st.subheader("Login Adm")
-        senha = st.text_input("senha", type="password", key="senha_input")
+   # if not st.session_state.get("logado", False):
+   #     st.subheader("Login Adm")
+   #     senha = st.text_input("senha", type="password", key="senha_input")
 
-    if senha == st.secrets["senha_adm"]:
-        st.session_state.logado = True
+   # if senha == st.secrets["senha_adm"]:
+   #     st.session_state.logado = True
         st.rerun()
-    elif senha:
+   # elif senha:
         st.error("Senha Incorreta")
-    else:
-        st.success("Logado como Adm")
-    if st.button("sair"):
-        st.session_state.logado = False
-        st.rerun()
+   # else:
+  #      st.success("Logado como Adm")
+  #  if st.button("sair"):
+    #    st.session_state.logado = False
+      #  st.rerun()
