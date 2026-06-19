@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-import pandas as pd
 dados_ubs = {
     "micro_08_equipe_316": {
         "profissionais": ["Acs-Adriano", "médica - Mirian", "Enfermeira de apoio: Ana paula Cavalcante."],
