@@ -335,9 +335,9 @@ with st.sidebar:
 
    # if senha == st.secrets["senha_adm"]:
    #     st.session_state.logado = True
-        st.rerun()
+      #  st.rerun()
    # elif senha:
-        st.error("Senha Incorreta")
+      #  st.error("Senha Incorreta")
    # else:
   #      st.success("Logado como Adm")
   #  if st.button("sair"):
