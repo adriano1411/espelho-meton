@@ -327,19 +327,8 @@ if st.button("buscar"):
 st.text("O espelho contempla todos as micros do Antônio Bezerra e algumas do Dom Lustosa!")
 
 
-# área do adm
-with st.sidebar:
-   # if not st.session_state.get("logado", False):
-   #     st.subheader("Login Adm")
-   #     senha = st.text_input("senha", type="password", key="senha_input")
-
-   # if senha == st.secrets["senha_adm"]:
-   #     st.session_state.logado = True
-      #  st.rerun()
-   # elif senha:
-      #  st.error("Senha Incorreta")
-   # else:
-  #      st.success("Logado como Adm")
-  #  if st.button("sair"):
-    #    st.session_state.logado = False
-      #  st.rerun()
+#colocando e melhorando o sidebar
+with sidebar:
+    st.header("bem vindo agente")
+    
+    
