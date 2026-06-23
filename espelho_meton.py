@@ -280,8 +280,41 @@ dados_ubs = {
             {"rua": "rua paulo lopes", "inicio": 565, "fim": 619, "lado": "todos"}
 
         ]
+    },
+    "micro_03_equipe_319": {
+        "profissionais": ["Acs: Nalva", "médico: Matheus ", "Enfermeira: Angela Belizário."],
+        "enderecos": [
+            {"rua": "rua itubiara", "inicio": 12, "fim": 112, "lado": "par"},
+            {"rua": "rua cravilandia", "inicio": 57, "fim": 179, "lado": "impar"},
+            {"rua": "rua agua verde", "inicio": 41, "fim": 125, "lado": "impar"},
+            {"rua": "rua tarcisio peixoto", "inicio": 329,
+                "fim": 343, "lado": "impar"},
+            {"rua": "rua doutor pedro augusto",
+                "inicio": 32, "fim": 52, "lado": "par"},
+            {"rua": "rua rui monte", "inicio": 964, "fim": 1220, "lado": "par"}
+        ]
+    },
+    "micro_03_equipe_318": {
+        "profissionais": ["Acs - Flor", "Sem médico na equipe ", "Enfermeira de apoio: Rochelle."],
+        "enderecos": [
+            {"rua": "rua doutor luis moraes correia",
+                "inicio": 3, "fim": 227, "lado": "impar"},
+            {"rua": "rua professor edgard de arruda ",
+                "inicio": 1965, "fim": 1998, "lado": "todos"},
+            {"rua": "rua roraima", "inicio": 5, "fim": 69, "lado": "impar"},
+            {"rua": "rua roraima", "inicio": 26, "fim": 62, "lado": "par"},
+            {"rua": "rua paulo lopes", "inicio": 1060, "fim": 1138, "lado": "todos"},
+            {"rua": "rua macapa", "inicio": 373, "fim": 869, "lado": "impar"},
+            {"rua": "rua manaus", "inicio": 500, "fim": 1042, "lado": "par"},
+            {"rua": "rua curitiba", "inicio": 1049, "fim": 1075, "lado": "impar"},
+            {"rua": "rua curitiba", "inicio": 1052, "fim": 1096, "lado": "par"},
+            {"rua": "avenida senador fernandes tavora ",
+                "inicio": 2342, "fim": 2360, "lado": "par"}
+
+        ]
     }
 }
+
 
 
 def buscar_micro_por_enderecos(endereco_busca):
@@ -306,8 +339,7 @@ st.set_page_config(page_title="Busca UAPS Meton de Alencar", layout="centered")
 st.title("Espelho digital UAPS Meton de Alencar")
 
 # input antes do botão
-endereco = st.text_input("Digite o endereço:",
-                         placeholder="Ex.:rua do imperador 42")
+endereco = st.text_input("Digite o endereço:",placeholder="Ex.:rua do imperador 42")
 
 # botão do contador
 if 'contador_busca' not in st.session_state:
@@ -318,17 +350,14 @@ if st.button("buscar"):
         micro, profissionais = buscar_micro_por_enderecos(endereco)
         if micro:
             st.success(f"{micro}.")
-            st.write("equipe:",
-
-
-                     ",".join(profissionais))
+            st.write("equipe:",",".join(profissionais))
         else:
             st.error("endereço fora de cobertura do Meton de Alencar.")
 
 st.text("O espelho contempla todos as micros do Antônio Bezerra e algumas do Dom Lustosa!")
 
 
-# área do adm
+#colocando e melhorando o sidebar
 with st.sidebar:
     if not st.session_state.get("logado", False):
         st.subheader("Login Adm")
