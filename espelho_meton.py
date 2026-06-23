@@ -37,7 +37,7 @@ dados_ubs = {
             {"rua": "rua 2 tupinamba da frota",
                 "inicio": 974, "fim": 1072, "lado": "par"},
             {"rua": "rua 2 tupinamba da frota",
-                "inicio": 982, "fim": 982, "lado": "todos"},    
+                "inicio": 982, "fim": 982, "lado": "todos"},
             {"rua": "rua salvador", "inicio": 30, "fim": 1068, "lado": "impar"},
             {"rua": "rua tenente queiros", "inicio": 1213,
                 "fim": 1213, "lado": "todos"}
@@ -345,25 +345,30 @@ with st.sidebar:
         st.session_state.logado = False
         st.rerun()
 
-#funcionalidade de prancheta
-ARQ_DADOS = "producao_acs" #pasta onde vai ser guardados os dados
-if os.path.exists(ARQ_DADOS): #para manter os dados salvos quando fechar o app
+# funcionalidade de prancheta
+ARQ_DADOS = "producao_acs"  # pasta onde vai ser guardados os dados
+if os.path.exists(ARQ_DADOS):  # para manter os dados salvos quando fechar o app
     with open(ARQ_DADOS, "r") as f:
         dados_acs = json.load(f)
 else:
     dados_acs = {}
 
-#campo de criação de login e senha
+# campo de criação de login e senha
 Senha_login = {
-    "adriano":"1234"
+    "adriano": "1234"
 }
 
-#função que salva os dados no json
-def Salvar_dado ():
-    with open (ARQ_DADOS, "w") as f:
-        json.dump(dados_acs,f,ensure_ascii=False, indent = 2) #aceita acentos e deixa legivel
+# função que salva os dados no json
 
-#função que mostra tela de login
+
+def Salvar_dado():
+    with open(ARQ_DADOS, "w") as f:
+        # aceita acentos e deixa legivel
+        json.dump(dados_acs, f, ensure_ascii=False, indent=2)
+
+# função que mostra tela de login
+
+
 def login():
     st.title("login")
     usuario = st.text_input("login", label="Usuário")
