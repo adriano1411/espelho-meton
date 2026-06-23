@@ -1,6 +1,6 @@
-import pandas as pd
 import streamlit as st
-import pandas as pd
+import json
+import os
 dados_ubs = {
     "micro_08_equipe_316": {
         "profissionais": ["Acs-Adriano", "médica - Mirian", "Enfermeira de apoio: Ana paula Cavalcante."],
@@ -344,3 +344,26 @@ with st.sidebar:
     if st.button("sair"):
         st.session_state.logado = False
         st.rerun()
+
+#funcionalidade de prancheta
+ARQ_DADOS = "producao_acs" #pasta onde vai ser guardados os dados
+if os.path.exists(ARQ_DADOS): #para manter os dados salvos quando fechar o app
+    with open(ARQ_DADOS, "r") as f:
+        dados_acs = json.load(f)
+else:
+    dados_acs = {}
+
+#campo de criação de login e senha
+Senha_login = {
+    "adriano":"1234"
+}
+
+#função que salva os dados no json
+def Salvar_dado ():
+    with open (ARQ_DADOS, "w") as f:
+        json.dump(dados_acs,f,ensure_ascii=False, indent = 2) #aceita acentos e deixa legivel
+
+#função que mostra tela de login
+def login():
+    st.title("login")
+    usuario = st.text_input("login", label="Usuário")
